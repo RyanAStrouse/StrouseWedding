@@ -1,5 +1,5 @@
 <?php
-	require 'Template.php';
+	require_once 'Template.php';
 ?>
 
 <!DOCTYPE html>

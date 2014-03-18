@@ -1,5 +1,6 @@
 <?php
-	require 'Template.php';
+	require_once 'Template.php';
+	require_once 'Database.php';
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +75,13 @@ $(document).ready(function () {
 	<br><br>
 	Ullum solet quaestio ius ex, aperiam scribentur id qui. Reque possim feugait no sea, sit quodsi convenire referrentur ne. Ad unum regione evertitur quo. Sed ad oratio vituperata. Imperdiet cotidieque delicatissimi cu nec. In pri tibique deterruisset.
 	</div>
+	<br><br>
+
+	<div id='cssmenu'>
+	<?php
+		FootNav()
+	?>
+	</div>
 
 <!-- Close the whole container div -->
 </div>
@@ -81,6 +89,5 @@ $(document).ready(function () {
 
 
 </body>
-
 
 </HTML>
