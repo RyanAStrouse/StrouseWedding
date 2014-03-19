@@ -1,33 +1,18 @@
-<?php
-	require_once 'Template.php';
+<?php 
+
+include 'Database.php';
+
+include_once('header.php');
+
 ?>
 
 <!DOCTYPE html>
 
 <HTML>
 
-<head>
-	<!--Keep a constant header across all pages-->
-	<?php
-	Headconstant();
-	?>	
-</head>
 
-<body>
-
-<!-- Contain everything into a div -->
-<div class="container_12">
-
-	<!-- MENU -->
-	<div id='cssmenu'>
-		<?php
-			MainNav();
-		?>
-	</div>
-	<!-- END MENU -->
-
-	<div class="main-wrapper">
-
+	
+	<div class="content wrapper">
 	<h1>Ceremony</h1>
 
 	Lorem ipsum dolor sit amet, est atqui accumsan at, dicta debitis delicata ius cu. Eum convenire persecuti vituperatoribus ex, pri et omittam deleniti, eum ne blandit eligendi maluisset. Idque melius per te. Te mollis aliquam accommodare sit.  Mel eu fugit reformidans, mea animal saperet te. Nusquam salutatus eos ne. Eius evertitur tincidunt ei sea, te stet liber commune eum, quo et aeterno equidem percipitur. Vel suas homero no, simul feugiat probatus usu cu, ne quas altera nec. Ut tale atqui vix.  Usu ea assentior moderatius, in sapientem voluptatibus eum. Habeo eligendi referrentur has ea. Ex nec sint labitur, mei tollit tempor et. Invenire voluptatibus ex usu, nam ludus percipitur at. Soleat vivendo ex est, laudem omittam mel an, nemore interpretaris cum ut.

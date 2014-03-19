@@ -68,6 +68,14 @@ textarea {
     padding: 0.2em 0;
 }
 
+
+h1 {
+    font-family: 'Allura', serif;
+    font-size: 40px;
+    border-bottom: 2px solid black;
+    text-align: center;   
+ }
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
