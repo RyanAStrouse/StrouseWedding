@@ -6,12 +6,6 @@ include_once('header.php');
 
 ?>
 
-<!DOCTYPE html>
-
-<HTML>
-
-
-
 	<div class="content wrapper">
 	<h1>Guest Info</h1>
 
