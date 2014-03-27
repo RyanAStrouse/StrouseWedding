@@ -19,13 +19,121 @@
 	<!-- Collect information for RSVP form -->
 	<?php
 	$table="Guests";
-	if(isset($_GET['guest_id']) AND !isset($_POST['txtFname']))
-	{
-		$searchid = mysql_real_escape_string($_GET['guest_id']);
-		$result = mysql_query("SELECT `firstName`, `middleName`, `lastName`, `streetAddress`, `city`, `state`, `zip`, `email`, `plusOne`, `attending` FROM $table WHERE guest_id='$searchid'");
-	}
-	?>
-		<form method="post" action="lookupRSVP.php?id="<?php echo $searchid; ?>" />
+	$searchid = mysql_real_escape_string($_GET['id']);
+	$result = mysql_query("SELECT `guest_id`, `firstName`, `middleName`, `lastName`, `streetAddress`, `city`, `state`, `zip`, `email`, `plusOne`, `attending` FROM $table WHERE guest_id='$searchid'");
+	
+		{
+		echo'
+			<form method="post" action="lookupRSVP.php?id='. mysql_result($result, 0,0) . '">
+			<div>
+				<label for="txtFname">First Name:</label>
+				<input type="text" class="required" name="txtFname" value="' . mysql_result($result,0,1) .'" />
+			</div>
+
+			<div>
+				<label for="txtMname">Middle Initial:</label>
+				<input type="text" class="required" name="txtMname" value="' . mysql_result($result,0,2) .'" />
+			</div>
+
+			<div>
+				<label for="txtLname">Last Name:</label>
+				<input type="text" class="required" name="txtLname" value="' . mysql_result($result,0,3) .'" />
+			</div>
+
+			<div>
+				<label for="txtStreetAddress">Street Address:</label>
+				<input type="text" class="required" name="txtStreetAddress" value="' . mysql_result($result,0,4) .'" />
+			</div>
+
+			<div>
+				<label for="txtCity">City:</label>
+				<input type="text" class="required" name="txtCity" value="' . mysql_result($result,0,5) .'" />
+			</div>
+
+			<div>
+				<label for="txtState">State:</label>
+				<select name="txtState">
+                <option value="" selected="' . mysql_result($result,0,6) .'" disabled="true">' . mysql_result($result,0,6) .'</option>
+	                <option value="AL">AL</option>
+					<option value="AK">AK</option>
+					<option value="AZ">AZ</option>
+					<option value="AR">AR</option>
+					<option value="CA">CA</option>
+					<option value="CO">CO</option>
+					<option value="CT">CT</option>
+					<option value="DE">DE</option>
+					<option value="DC">DC</option>
+					<option value="FL">FL</option>
+					<option value="GA">GA</option>
+					<option value="HI">HI</option>
+					<option value="ID">ID</option>
+					<option value="IL">IL</option>
+					<option value="IN">IN</option>
+					<option value="IA">IA</option>
+					<option value="KS">KS</option>
+					<option value="KY">KY</option>
+					<option value="LA">LA</option>
+					<option value="ME">ME</option>
+					<option value="MD">MD</option>
+					<option value="MA">MA</option>
+					<option value="MI">MI</option>
+					<option value="MN">MN</option>
+					<option value="MS">MS</option>
+					<option value="MO">MO</option>
+					<option value="MT">MT</option>
+					<option value="NE">NE</option>
+					<option value="NV">NV</option>
+					<option value="NH">NH</option>
+					<option value="NJ">NJ</option>
+					<option value="NM">NM</option>
+					<option value="NY">NY</option>
+					<option value="NC">NC</option>
+					<option value="ND">ND</option>
+					<option value="OH">OH</option>
+					<option value="OK">OK</option>
+					<option value="OR">OR</option>
+					<option value="PA">PA</option>
+					<option value="RI">RI</option>
+					<option value="SC">SC</option>
+					<option value="SD">SD</option>
+					<option value="TN">TN</option>
+					<option value="TX">TX</option>
+					<option value="UT">UT</option>
+					<option value="VT">VT</option>
+					<option value="VA">VA</option>
+					<option value="WA">WA</option>
+					<option value="WV">WV</option>
+					<option value="WI">WI</option>
+					<option value="WY">WY</option>			
+                </select>
+			</div>
+
+			<div>
+				<label for="txtZip">Zip:</label>
+				<input type="text" class="required" name="txtZip" value="' . mysql_result($result,0,7) .'" />
+			</div>
+
+			<div>
+				<label for="txtEmail">E-mail:</label>
+				<input type="text" class="required" name="txtEmail" value="' . mysql_result($result,0,8) .'" />
+			</div>
+
+			<div>
+				<label for="txtPlusOne">Plus One:</label>
+				<input type="text" class="required" name="txtPlusOne" value="' . mysql_result($result,0,9) .'" />
+			</div>
+	
+	<input class="btn" type="submit" value="Submit">	
+	<input class="btn" type="submit" value="Go Back" formaction="RSVP.php">
+	</form>';
+	}?>
+
+	<!-- edited for now 
+	
+		
+			<div>
+				<input type="hidden" value="<?php echo $searchid; ?>" />
+			</div>
 			<div>
 				<label for="txtFname">First Name:</label>
 				<input type="text" class="required" name="txtFname" value="<?php mysql_result($result,0,1); ?>" />
@@ -127,6 +235,8 @@
 	<input class="btn" type="submit" value="Submit">	
 	<input class="btn" type="submit" value="Go Back" formaction="RSVP.php">
 	</form>
+	-->
+
 	<!-- End collect information form -->
 	
 
