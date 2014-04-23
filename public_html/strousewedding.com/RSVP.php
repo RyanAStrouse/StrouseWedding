@@ -13,7 +13,7 @@ include_once 'header.php';
 		$table = 'Guests';
 	?>
 
-	<!-- Collect information for RSVP form -->
+	<!-- Collect information for RSVP search -->
 	<form method="get">
 		<div>
 			<div>
@@ -21,10 +21,12 @@ include_once 'header.php';
 				<input type="text" class="required" name="txtFname">
 			</div>
 
+			<!-- take out for now 
 			<div>
 				<label for="txtMname">Middle Name:</label>
 				<input type="text" class="required" name="txtMname">
 			</div>
+			-->
 
 			<div>
 				<label for="txtLname">Last Name:</label>
@@ -40,11 +42,14 @@ include_once 'header.php';
 	<?php
 		
 		$firstName=mysql_real_escape_string($_GET['txtFname']);
-		$middleName=mysql_real_escape_string($_GET['txtMname']);
 		$lastName=mysql_real_escape_string($_GET['txtLname']);
 		$searchid = mysql_real_escape_string($_GET['Search']);
-		$rows=mysql_query("SELECT * FROM $table WHERE `firstName` LIKE '$firstName' AND `middleName` LIKE '$middleName' AND `lastName` LIKE '$lastName'");
-		$numrows = min(mysql_num_rows($rows),10);	
+		$rows=mysql_query("SELECT * FROM $table WHERE `firstName` LIKE '$firstName' AND `lastName` LIKE '$lastName'");
+		$numrows = min(mysql_num_rows($rows),10);
+		while ($row = mysql_fetch_assoc($rows))
+		{
+			$middleName=$row["middleName"];
+		}	
 		$nameSearch = "$firstName" . " " . "$middleName" . " " . "$lastName";
 		for($i=0; $i< $numrows;$i++)
 			{

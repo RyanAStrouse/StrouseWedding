@@ -41,6 +41,35 @@
 			<div class="branding">
 				<div class="wrapper clearfix">
 					<img class="logo" src="images/logo.png" />
+					<span id="countdown"></span>
+					<script>
+					// Set the target date
+					var target_date = new Date("Dec 13, 2014").setHours(14);
+
+					// Create variables for time units
+					var months, days, hours, minutes, seconds;
+
+					//get tag element
+					var countdown = document.getElementById("countdown");
+
+					setInterval(function () {
+  					//find amount of seconds between now and target
+  					var current_date = new Date().getTime();
+  					var seconds_left = (target_date - current_date) / 1000;
+                    
+  					days = parseInt(seconds_left / 86400);
+  					seconds_left = seconds_left % 86400;
+  
+  					hours = parseInt(seconds_left / 3600);
+  					seconds_left = seconds_left % 3600;
+  
+  					minutes = parseInt(seconds_left / 60);
+  					seconds = parseInt(seconds_left % 60);
+  
+  					//format
+  					countdown.innerHTML = days + "d, " + hours + "h, " + minutes + "m, " + seconds + "s";
+					}, 1000);
+					</script>
 				</div>
 			</div>
 			<nav class="siteNav wrapper clearfix">

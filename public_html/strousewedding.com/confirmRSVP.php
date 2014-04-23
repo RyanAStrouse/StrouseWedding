@@ -42,11 +42,6 @@
 			</div>
 
 			<div>
-				<label for="txtMname">Middle Initial:</label>
-				<input type="text" class="required" name="txtMname">
-			</div>
-
-			<div>
 				<label for="txtLname">Last Name:</label>
 				<input type="text" class="required" name="txtLname">
 			</div>

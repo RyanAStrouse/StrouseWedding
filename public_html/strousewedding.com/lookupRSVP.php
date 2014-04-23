@@ -24,15 +24,10 @@
 	
 		{
 		echo'
-			<form method="post" action="lookupRSVP.php?id='. mysql_result($result, 0,0) . '">
+			<form method="post" action="confirmRSVP.php?id='. mysql_result($result, 0,0) . '">
 			<div>
 				<label for="txtFname">First Name:</label>
 				<input type="text" class="required" name="txtFname" value="' . mysql_result($result,0,1) .'" />
-			</div>
-
-			<div>
-				<label for="txtMname">Middle Initial:</label>
-				<input type="text" class="required" name="txtMname" value="' . mysql_result($result,0,2) .'" />
 			</div>
 
 			<div>
@@ -119,11 +114,83 @@
 			</div>
 
 			<div>
-				<label for="txtPlusOne">Plus One:</label>
-				<input type="text" class="required" name="txtPlusOne" value="' . mysql_result($result,0,9) .'" />
+				<label for="txtPlusOne">Total Number Attending:</label>
+				<select name="numberAttending">
+                	<option value="" selected="' . mysql_result($result,0,9) .'" disabled="true">' . mysql_result($result,0,9) .'</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+
+			<div>
+				<label for="radAttenting">Attending</label>
+				<br>
+				<label for="cannotAttend">Cannot Attend:</label>
+				<input type="radio" name="radAttending" id="cannotAttend" value="cannotAttend" />
+				<label for="wedding">Wedding:</label>
+				<input type="radio" name="radAttending" id="wedding" value="wedding" />
+				<label for="reception">Reception:</label>
+				<input type="radio" name="radAttending" id="reception" value="reception" />
+				<label for="both">Both:</label>
+				<input type="radio" name="radAttending" id="both" value="both" />
+			</div>
+
+
+			<div>
+				<label for="ageAttending">Age of Attendee</label>
+				<br>
+				<label for="oneToFour">1-4:</label>
+				<select name="oneToFour">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+
+				<label for="fourToEleven">4-11:</label>
+				<select name="fourToEleven">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+
+				<label for="twelveAndUp">12 and up:</label>
+				<select name="twelveAndUp">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
 			</div>
 	
-	<input class="btn" type="submit" value="Submit">	
+	<input class="btn" type="submit" value="Confirm">	
 	<input class="btn" type="submit" value="Go Back" formaction="RSVP.php">
 	</form>';
 	}?>
