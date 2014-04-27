@@ -25,28 +25,20 @@
 		{
 		echo'
 			<form method="post" action="confirmRSVP.php?id='. mysql_result($result, 0,0) . '">
-			<div>
-				<label for="txtFname">First Name:</label>
+
+				<label for="txtFname">First Name</label>
 				<input type="text" class="required" name="txtFname" value="' . mysql_result($result,0,1) .'" />
-			</div>
 
-			<div>
-				<label for="txtLname">Last Name:</label>
+				<label for="txtLname">Last Name</label>
 				<input type="text" class="required" name="txtLname" value="' . mysql_result($result,0,3) .'" />
-			</div>
 
-			<div>
-				<label for="txtStreetAddress">Street Address:</label>
+				<label for="txtStreetAddress">Street Address</label>
 				<input type="text" class="required" name="txtStreetAddress" value="' . mysql_result($result,0,4) .'" />
-			</div>
 
-			<div>
-				<label for="txtCity">City:</label>
+				<label for="txtCity">City</label>
 				<input type="text" class="required" name="txtCity" value="' . mysql_result($result,0,5) .'" />
-			</div>
 
-			<div>
-				<label for="txtState">State:</label>
+				<label for="txtState">State</label>
 				<select name="txtState">
                 <option value="" selected="' . mysql_result($result,0,6) .'" disabled="true">' . mysql_result($result,0,6) .'</option>
 	                <option value="AL">AL</option>
@@ -101,21 +93,15 @@
 					<option value="WI">WI</option>
 					<option value="WY">WY</option>			
                 </select>
-			</div>
 
-			<div>
-				<label for="txtZip">Zip:</label>
+				<label for="txtZip">Zip</label>
 				<input type="text" class="required" name="txtZip" value="' . mysql_result($result,0,7) .'" />
-			</div>
 
-			<div>
-				<label for="txtEmail">E-mail:</label>
+				<label for="txtEmail">E-mail</label>
 				<input type="text" class="required" name="txtEmail" value="' . mysql_result($result,0,8) .'" />
-			</div>
 
-			<div>
-				<label for="txtPlusOne">Total Number Attending:</label>
-				<select name="numberAttending">
+				<label for="txtPlusOne" class="inline">Total Number Attending:</label>
+				<select name="numberAttending" class="inline">
                 	<option value="" selected="' . mysql_result($result,0,9) .'" disabled="true">' . mysql_result($result,0,9) .'</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -128,27 +114,27 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</select>
-			</div>
 
-			<div>
-				<label for="radAttenting">Attending</label>
-				<br>
-				<label for="cannotAttend">Cannot Attend:</label>
-				<input type="radio" name="radAttending" id="cannotAttend" value="cannotAttend" />
-				<label for="wedding">Wedding:</label>
-				<input type="radio" name="radAttending" id="wedding" value="wedding" />
-				<label for="reception">Reception:</label>
-				<input type="radio" name="radAttending" id="reception" value="reception" />
-				<label for="both">Both:</label>
-				<input type="radio" name="radAttending" id="both" value="both" />
-			</div>
+				<p><strong>Attending</strong></p>
 
+				<label for="cannotAttend">
+					<input type="radio" name="radAttending" id="cannotAttend" value="cannotAttend" />Cannot Attend
+				</label>
+				<label for="wedding">
+					<input type="radio" name="radAttending" id="wedding" value="wedding" />Wedding
+				</label>
+				<label for="reception">
+					<input type="radio" name="radAttending" id="reception" value="reception" />Reception
+				</label>
+				<label for="both">
+					<input type="radio" name="radAttending" id="both" value="both" />Both
+				</label>
 
-			<div>
-				<label for="ageAttending">Age of Attendee</label>
-				<br>
-				<label for="oneToFour">1-4:</label>
-				<select name="oneToFour">
+				<p><strong>Age of Attendees</strong></p>
+
+				<label for="oneToFour" class="inline" style="width: 85px">1-4:</label>
+				<select name="oneToFour" class="inline">
+					<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -160,9 +146,10 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</select>
-
-				<label for="fourToEleven">4-11:</label>
-				<select name="fourToEleven">
+				<br />
+				<label for="fourToEleven" class="inline" style="width: 85px">4-11:</label>
+				<select name="fourToEleven" class="inline">
+					<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -174,9 +161,10 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</select>
-
-				<label for="twelveAndUp">12 and up:</label>
-				<select name="twelveAndUp">
+				<br />
+				<label for="twelveAndUp" class="inline" style="width: 85px">12 and up:</label>
+				<select name="twelveAndUp" class="inline">
+					<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -188,12 +176,13 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</select>
-			</div>
-	
-	<input class="btn" type="submit" value="Confirm">	
-	<input class="btn" type="submit" value="Go Back" formaction="RSVP.php">
-	</form>';
-	}?>
+				<br />
+				<div class="formActions">
+					<input class="btn" type="submit" value="Confirm">	
+					<input class="btn" type="submit" value="Go Back" formaction="RSVP.php">
+				</div>
+			</form>';
+		}?>
 
 	<!-- edited for now 
 	

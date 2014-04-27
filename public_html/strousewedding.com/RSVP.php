@@ -21,13 +21,6 @@ include_once 'header.php';
 				<input type="text" class="required" name="txtFname">
 			</div>
 
-			<!-- take out for now 
-			<div>
-				<label for="txtMname">Middle Name:</label>
-				<input type="text" class="required" name="txtMname">
-			</div>
-			-->
-
 			<div>
 				<label for="txtLname">Last Name:</label>
 				<input type="text" class="required" name="txtLname">
