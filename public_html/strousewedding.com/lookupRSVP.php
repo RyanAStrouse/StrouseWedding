@@ -6,16 +6,12 @@
 <div class="content wrapper">
 	<h1>RSVP</h1>
 
-	Lorem ipsum dolor sit amet, est atqui accumsan at, dicta debitis delicata ius cu. 
-	Eum convenire persecuti vituperatoribus ex, pri et omittam deleniti, eum ne blandit eligendi maluisset. 
-	Idque melius per te. Te mollis aliquam accommodare sit.  Mel eu fugit reformidans, mea animal saperet te. 
-	Nusquam salutatus eos ne. Eius evertitur tincidunt ei sea, te stet liber commune eum, quo et aeterno equidem percipitur. 
-	Vel suas homero no, simul feugiat probatus usu cu, ne quas altera nec. Ut tale atqui vix.  
-	Usu ea assentior moderatius, in sapientem voluptatibus eum. Habeo eligendi referrentur has ea. 
-	Ex nec sint labitur, mei tollit tempor et. Invenire voluptatibus ex usu, nam ludus percipitur at. 
-	Soleat vivendo ex est, laudem omittam mel an, nemore interpretaris cum ut.
-	<br><br>
-
+	<p>
+		Please confirm the details on this page, in case the mailing address has changed since you received your invitation in the mail.
+		Feel free to adjust this information up until Decemeber 1st, 2014 as that is the final day we can submit changes of attendance to 
+		the reception event.  Thank you.
+	</p>
+	
 	<!-- Collect information for RSVP form -->
 	<?php
 	$table="Guests";
@@ -26,8 +22,8 @@
 		echo'
 			<form method="post" action="confirmRSVP.php?id='. mysql_result($result, 0,0) . '">
 
-				<label for="txtFname">First Name
-				<input type="text" class="required" name="txtFname" value="' . mysql_result($result,0,1) .'" /></label>
+				<label for="txtFname">First Name</label>
+				<input type="text" class="required" name="txtFname" id="txtFname" value="' . mysql_result($result,0,1) .'" />
 
 				<label for="txtLname">Last Name
 				<input type="text" class="required" name="txtLname" value="' . mysql_result($result,0,3) .'" /></label>
@@ -133,7 +129,7 @@
 
 				<p><strong>Age of Attendees</strong></p>
 
-				<label for="oneToFour" class="inline" style="width: 85px">1-4:
+				<label for="oneToFour" class="inline" style="width: 85px">1-4:</label>
 				<select name="oneToFour" class="inline">
 					<option value="0">0</option>
 					<option value="1">1</option>
@@ -146,11 +142,11 @@
 					<option value="8">8</option>
 					<option value="9">9</option>
 					<option value="10">10</option>
-				</select></label>
+				</select>
 
 				<br />
 
-				<label for="fourToEleven" class="inline" style="width: 85px">4-11:
+				<label for="fourToEleven" class="inline" style="width: 85px">4-11:</label>
 				<select name="fourToEleven" class="inline">
 					<option value="0">0</option>
 					<option value="1">1</option>
@@ -163,11 +159,11 @@
 					<option value="8">8</option>
 					<option value="9">9</option>
 					<option value="10">10</option>
-				</select></label>
+				</select>
 
 				<br />
 
-				<label for="twelveAndUp" class="inline" style="width: 85px">12 and up:
+				<label for="twelveAndUp" class="inline" style="width: 85px">12 and up:</label>
 				<select name="twelveAndUp" class="inline">
 					<option value="0">0</option>
 					<option value="1">1</option>
@@ -180,7 +176,7 @@
 					<option value="8">8</option>
 					<option value="9">9</option>
 					<option value="10">10</option>
-				</select></label>
+				</select>
 
 				<br />
 
@@ -191,11 +187,6 @@
 			</form>';
 		}?>
 
-
-	Mei exerci utroque scripserit et, vis eu eligendi theophrastus reprehendunt. At mel sint decore, et vero cetero scriptorem mel. Nisl euripidis te eum, ex eros ornatus erroribus pro, mel et quas exerci elaboraret. Mutat modus zril sea ut. Congue aliquam deleniti duo ea. Mei alii error nonumy an, ex sea aliquando definitiones. No esse bonorum sea.
-	<br><br>
-	Ullum solet quaestio ius ex, aperiam scribentur id qui. Reque possim feugait no sea, sit quodsi convenire referrentur ne. Ad unum regione evertitur quo. Sed ad oratio vituperata. Imperdiet cotidieque delicatissimi cu nec. In pri tibique deterruisset.
-	
 
 <!-- Close the whole container div -->
 </div>

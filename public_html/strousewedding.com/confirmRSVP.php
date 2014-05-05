@@ -1,30 +1,7 @@
 <?php
-	require_once 'Template.php';
+	include_once 'Database.php';
+	include_once 'header.php';
 ?>
-
-<!DOCTYPE html>
-
-<HTML>
-
-<head>
-	<!--Keep a constant header across all pages-->
-	<?php
-	Headconstant();
-	?>	
-</head>
-
-<body>
-
-<!-- Contain everything into a div -->
-<div class="container_12">
-
-	<!-- MENU -->
-	<div id='cssmenu'>
-		<?php
-			MainNav();
-		?>
-	</div>
-	<!-- END MENU -->
 
 	<div class="main-wrapper">
 
@@ -37,31 +14,31 @@
 	<form method="post" id="subForm" action="confirmRSVP.php">
 		<div>
 			<div>
-				<label for="txtFname">First Name:</label>
-				<input type="text" class="required" name="txtFname">
+				<label for="txtFname">First Name:
+				<input type="text" class="required" name="txtFname"></label>
 			</div>
 
 			<div>
-				<label for="txtLname">Last Name:</label>
-				<input type="text" class="required" name="txtLname">
-			</div>
-		</div>
-
-		<div>
-			<div>
-				<label for="txtStAddress">Street Address:</label>
-				<input type="text" class="required" name="txtStAddress">
+				<label for="txtLname">Last Name:
+				<input type="text" class="required" name="txtLname"></label>
 			</div>
 		</div>
 
 		<div>
 			<div>
-				<label for="txtCity">City:</label>
-				<input type="text" class="required" name="txtCity">
+				<label for="txtStAddress">Street Address:
+				<input type="text" class="required" name="txtStAddress"></label>
+			</div>
+		</div>
+
+		<div>
+			<div>
+				<label for="txtCity">City:
+				<input type="text" class="required" name="txtCity"></label>
 			</div>
 
 			<div>
-				<label for="txtState">State:</label>
+				<label for="txtState">State:
 				<select name="txtState">
 					<option value="" class="required" selected="selected" disabled="true">--</option>
 					<option value="AL">AL</option>
@@ -115,22 +92,104 @@
 					<option value="WV">WV</option>
 					<option value="WI">WI</option>
 					<option value="WY">WY</option>
-				</select>
+				</select></label>
 			</div>
 
 			<div>
-				<label for="txtZip">Zip:</label>
-				<input type="text" class="required" name="txtZip" size="7">
+				<label for="txtZip">Zip:
+				<input type="text" class="required" name="txtZip" size="7"></label>
 			</div>
 		</div>
 
 		<div>
 			<div>
-				<label for="txtEmail">E-mail:</label>
-				<input type="text" class="required" name="txtEmail">
+				<label for="txtEmail">E-mail:
+				<input type="text" class="required" name="txtEmail"></label>
 			</div>
 		</div>
 
+		<label for="txtPlusOne" class="inline">Total Number Attending:
+				<select name="numberAttending" class="inline">
+                	<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select></label>
+
+				<p><strong>Attending</strong></p>
+
+				<label for="cannotAttend">
+					<input type="radio" name="radAttending" id="cannotAttend" value="cannotAttend" />Cannot Attend
+				</label>
+				<label for="wedding">
+					<input type="radio" name="radAttending" id="wedding" value="wedding" />Wedding
+				</label>
+				<label for="reception">
+					<input type="radio" name="radAttending" id="reception" value="reception" />Reception
+				</label>
+				<label for="both">
+					<input type="radio" name="radAttending" id="both" value="both" />Both
+				</label>
+
+				<p><strong>Age of Attendees</strong></p>
+
+				<label for="oneToFour" class="inline" style="width: 85px">1-4:
+				<select name="oneToFour" class="inline">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select></label>
+
+				<br />
+
+				<label for="fourToEleven" class="inline" style="width: 85px">4-11:
+				<select name="fourToEleven" class="inline">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select></label>
+
+				<br />
+
+				<label for="twelveAndUp" class="inline" style="width: 85px">12 and up:
+				<select name="twelveAndUp" class="inline">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select></label>
+
+				<br />
 	<input class="btn" type="submit" value="Submit">
 	<input class="btn" type="reset" value="Reset">
 
