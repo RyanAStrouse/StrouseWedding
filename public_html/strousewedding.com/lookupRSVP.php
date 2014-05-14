@@ -8,35 +8,37 @@
 
 	<p>
 		Please confirm the details on this page, in case the mailing address has changed since you received your invitation in the mail.
-		Feel free to adjust this information up until Decemeber 1st, 2014 as that is the final day we can submit changes of attendance to 
+		Feel free to adjust this information up until December 1st, 2014 as that is the final day we can submit changes of attendance to 
 		the reception event.  Thank you.
 	</p>
 	
 	<!-- Collect information for RSVP form -->
 	<?php
-	$table="Guests";
-	$searchid = mysql_real_escape_string($_GET['id']);
-	$result = mysql_query("SELECT `guest_id`, `firstName`, `middleName`, `lastName`, `streetAddress`, `city`, `state`, `zip`, `email`, `plusOne`, `attending` FROM $table WHERE guest_id='$searchid'");
-	
+	$searchid = mysqli_real_escape_string($connect,$_GET['id']);
+	$table = "Guests";
+
+	$result = mysqli_query($connect,"SELECT `guest_id`, `firstName`, `middleName`, `lastName`, `streetAddress`, `city`, `state`, `zip`, `email`, `plusOne`, `attending` FROM $table WHERE guest_id='$searchid'");
+
+	while ($row = mysqli_fetch_assoc($result))
 		{
-		echo'
-			<form method="post" action="confirmRSVP.php?id='. mysql_result($result, 0,0) . '">
+	?>
+			<form method="post" action="confirmRSVP.php?id=<?php echo $row['guest_id'];?>">
 
 				<label for="txtFname">First Name</label>
-				<input type="text" class="required" name="txtFname" id="txtFname" value="' . mysql_result($result,0,1) .'" />
+				<input type="text" class="required" name="txtFname" id="txtFname" value="<?php echo $row['firstName'];?>" />
 
 				<label for="txtLname">Last Name
-				<input type="text" class="required" name="txtLname" value="' . mysql_result($result,0,3) .'" /></label>
+				<input type="text" class="required" name="txtLname" value="<?php echo $row['lastName'];?>" /></label>
 
 				<label for="txtStreetAddress">Street Address
-				<input type="text" class="required" name="txtStreetAddress" value="' . mysql_result($result,0,4) .'" /></label>
+				<input type="text" class="required" name="txtStreetAddress" value="<?php echo $row['streetAddress'];?>" /></label>
 
 				<label for="txtCity">City
-				<input type="text" class="required" name="txtCity" value="' . mysql_result($result,0,5) .'" /></label>
+				<input type="text" class="required" name="txtCity" value="<?php echo $row['city'];?>" /></label>
 
 				<label for="txtState">State
 				<select name="txtState">
-                <option value="" selected="' . mysql_result($result,0,6) .'" disabled="true">' . mysql_result($result,0,6) .'</option>
+                <option value="" selected="<?php echo $row['state'];?>" disabled="true"><?php echo $row['state'];?></option>
 	                <option value="AL">AL</option>
 					<option value="AK">AK</option>
 					<option value="AZ">AZ</option>
@@ -91,14 +93,14 @@
                 </select></label>
 
 				<label for="txtZip">Zip
-				<input type="text" class="required" name="txtZip" value="' . mysql_result($result,0,7) .'" /></label>
+				<input type="text" class="required" name="txtZip" value="<?php echo $row['zip'];?>" /></label>
 
 				<label for="txtEmail">E-mail
-				<input type="text" class="required" name="txtEmail" value="' . mysql_result($result,0,8) .'" /></label>
+				<input type="text" class="required" name="txtEmail" value="<?php echo $row['email'];?>" /></label>
 
 				<label for="txtPlusOne" class="inline">Total Number Attending:
 				<select name="numberAttending" class="inline">
-                	<option value="" selected="' . mysql_result($result,0,9) .'" disabled="true">' . mysql_result($result,0,9) .'</option>
+                	<option value="" selected="<?php echo $row['plusOne'];?>" disabled="true"><?php echo $row['plusOne'];?></option>
                 	<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -184,8 +186,8 @@
 					<input class="btn" type="submit" value="Confirm">	
 					<input class="btn" type="submit" value="Go Back" formaction="RSVP.php">
 				</div>
-			</form>';
-		}?>
+			</form>
+		<?php } ?>
 
 
 <!-- Close the whole container div -->

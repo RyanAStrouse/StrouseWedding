@@ -36,21 +36,36 @@ include_once 'header.php';
 	
 	<!-- Begin database search for information provided -->
 	<?php
-		
-		$firstName=mysql_real_escape_string($_GET['txtFname']);
-		$lastName=mysql_real_escape_string($_GET['txtLname']);
-		$searchid = mysql_real_escape_string($_GET['Search']);
-		$rows=mysql_query("SELECT * FROM $table WHERE `firstName` LIKE '$firstName' AND `lastName` LIKE '$lastName'");
-		$numrows = min(mysql_num_rows($rows),10);
-		while ($row = mysql_fetch_assoc($rows))
-		{
-			$middleName=$row["middleName"];
-		}	
-		$nameSearch = "$firstName" . " " . "$middleName" . " " . "$lastName";
-		for($i=0; $i< $numrows;$i++)
-			{
-				echo '<td><a href="lookupRSVP.php?id=' . mysql_result($rows,$i,'guest_id') . '">' . $nameSearch . '</a></td>';
+
+		$firstName=mysqli_real_escape_string($connect,$_GET['txtFname']);
+		$middleName=mysqli_real_escape_string($connect,$_GET['txtMname']);
+		$lastName=mysqli_real_escape_string($connect,$_GET['txtLname']);
+		$searchid = mysqli_real_escape_string($connect,$_GET['Search']);
+		$rows=mysqli_query($connect,"SELECT guest_id, middleName FROM Guests WHERE `firstName` LIKE '$firstName' AND `lastName` LIKE '$lastName'");
+		$resultName = array();
+
+		while($row = mysqli_fetch_assoc($rows))
+			{	
+				$resultName[] = $row;
 			}
+
+		if (count($resultName) == 1)
+		{
+			foreach ($resultName as $key => $value)
+			{
+				echo' <script>
+					window.location = "lookupRSVP.php?id=' . $value['guest_id'] . '";
+				</script>';
+			}
+		}
+		elseif(count($resultName) > 1)
+			{
+			foreach ($resultName as $key => $value)
+					{
+						$nameSearch = "$firstName" . " " . $value['middleName'] . " " . "$lastName";
+						echo '<p><a href="lookupRSVP.php?id=' . $value['guest_id'] . '">' . $nameSearch . '</a></p>';
+					}
+		 	}
 		
 	?>
 

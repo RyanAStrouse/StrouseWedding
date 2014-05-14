@@ -223,3 +223,5 @@ sftp-config.json
 index.html
 error_log
 Database.php
+AdminRSVP.php
+add-edit-RSVP.php
