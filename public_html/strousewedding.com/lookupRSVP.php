@@ -17,7 +17,7 @@
 	$searchid = mysqli_real_escape_string($connect,$_GET['id']);
 	$table = "Guests";
 
-	$result = mysqli_query($connect,"SELECT `guest_id`, `firstName`, `middleName`, `lastName`, `streetAddress`, `city`, `state`, `zip`, `email`, `plusOne`, `attending` FROM $table WHERE guest_id='$searchid'");
+	$result = mysqli_query($connect,"SELECT `guest_id`, `firstName`, `middleName`, `lastName`, `streetAddress`, `city`, `state`, `zip`, `email`, `totalAttend`, `isAttend`, `ageOneToFour`,`ageFourToEleven`,`ageTwelveUp` FROM $table WHERE guest_id='$searchid'");
 
 	while ($row = mysqli_fetch_assoc($result))
 		{
@@ -98,9 +98,9 @@
 				<label for="txtEmail">E-mail
 				<input type="text" class="required" name="txtEmail" value="<?php echo $row['email'];?>" /></label>
 
-				<label for="txtPlusOne" class="inline">Total Number Attending:
-				<select name="numberAttending" class="inline">
-                	<option value="" selected="<?php echo $row['plusOne'];?>" disabled="true"><?php echo $row['plusOne'];?></option>
+				<label for="totalAttend" class="inline">Total Number Attending:
+				<select name="totalAttend" class="inline">
+                	<option value="" selected="<?php echo $row['totalAttend'];?>" disabled="true"><?php echo $row['totalAttend'];?></option>
                 	<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -117,22 +117,23 @@
 				<p><strong>Attending</strong></p>
 
 				<label for="cannotAttend">
-					<input type="radio" name="radAttending" id="cannotAttend" value="cannotAttend" />Cannot Attend
+					<input type="radio" name="isAttend" id="cannotAttend" value="cannotAttend" />Cannot Attend
 				</label>
 				<label for="wedding">
-					<input type="radio" name="radAttending" id="wedding" value="wedding" />Wedding
+					<input type="radio" name="isAttend" id="wedding" value="wedding" />Wedding
 				</label>
 				<label for="reception">
-					<input type="radio" name="radAttending" id="reception" value="reception" />Reception
+					<input type="radio" name="isAttend" id="reception" value="reception" />Reception
 				</label>
 				<label for="both">
-					<input type="radio" name="radAttending" id="both" value="both" />Both
+					<input type="radio" name="isAttend" id="both" value="both" />Both
 				</label>
 
 				<p><strong>Age of Attendees</strong></p>
 
-				<label for="oneToFour" class="inline" style="width: 85px">1-4:</label>
-				<select name="oneToFour" class="inline">
+				<label for="ageOneToFour" class="inline" style="width: 85px">1-4:</label>
+				<select name="ageOneToFour" class="inline">
+					<option value="" selected="<?php echo $row['ageOneToFour'];?>" disabled="true"><?php echo $row['ageOneToFour'];?></option>
 					<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -148,8 +149,9 @@
 
 				<br />
 
-				<label for="fourToEleven" class="inline" style="width: 85px">4-11:</label>
-				<select name="fourToEleven" class="inline">
+				<label for="ageFourToEleven" class="inline" style="width: 85px">4-11:</label>
+				<select name="ageFourToEleven" class="inline">
+					<option value="" selected="<?php echo $row['ageFourToEleven'];?>" disabled="true"><?php echo $row['ageFourToEleven'];?></option>
 					<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -165,8 +167,9 @@
 
 				<br />
 
-				<label for="twelveAndUp" class="inline" style="width: 85px">12 and up:</label>
-				<select name="twelveAndUp" class="inline">
+				<label for="ageTwelveUp" class="inline" style="width: 85px">12 and up:</label>
+				<select name="ageTwelveUp" class="inline">
+					<option value="" selected="<?php echo $row['ageTwelveUp'];?>" disabled="true"><?php echo $row['ageTwelveUp'];?></option>
 					<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
