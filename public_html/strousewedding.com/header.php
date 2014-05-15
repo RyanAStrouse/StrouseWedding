@@ -67,7 +67,8 @@
   					seconds = parseInt(seconds_left % 60);
   
   					//format
-  					countdown.innerHTML = days + "d, " + hours + "h, " + minutes + "m, " + seconds + "s";
+  					// countdown.innerHTML = days + "d, " + hours + "h, " + minutes + "m, " + seconds + "s";
+  					countdown.innerHTML = days + " DAYS LEFT";
 					}, 1000);
 					</script>
 				</div>
