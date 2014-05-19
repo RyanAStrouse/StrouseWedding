@@ -1,12 +1,11 @@
 <?php 
-
-include 'Database.php';
-
-include_once('header.php');
-
+	include 'Database.php';
+	include_once('header.php');
 ?>
 
-	<div class="content wrapper">
+<!-- Open container div -->
+<div class="content wrapper">
+	
 	<h1>Registry</h1>
 
 	<p>
@@ -18,6 +17,4 @@ include_once('header.php');
 </div>
 
 </body>
-
-
 </HTML>

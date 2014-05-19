@@ -1,12 +1,11 @@
 <?php 
-
-include 'Database.php';
-
-include_once('header.php');
-
+	include 'Database.php';
+	include_once('header.php');
 ?>
 
-	<div class="content wrapper">
+<!-- Open container div -->
+<div class="content wrapper">
+
 	<h1>Wedding Party</h1>
 
 	<p>
@@ -14,12 +13,8 @@ include_once('header.php');
 		We thank them for always being there for us when we needed them most.
 	</p>	
  
-	</div>
-
 <!-- Close the whole container div -->
 </div>
 
 </body>
-
-
 </HTML>
