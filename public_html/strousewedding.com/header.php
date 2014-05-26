@@ -4,7 +4,6 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" itemscope itemtype="http://schema.org/Article"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" itemscope itemtype="http://schema.org/Article"> <!--<![endif]-->
 	<head>
-
 		<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet prefetch' type='text/css'>-->
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -19,7 +18,8 @@
 		<link rel="stylesheet prefetch" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
 		<link rel="stylesheet prefetch" type="text/css" href="http://fonts.googleapis.com/css?family=Allura">
 		<script src="js/prefixfree.min.js"></script>
-
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		
 		<!--[if lt IE 9]>
 			<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
 		<![endif]-->

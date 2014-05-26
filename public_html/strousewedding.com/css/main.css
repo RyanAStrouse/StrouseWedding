@@ -233,7 +233,7 @@ label.inline, input.inline, select.inline {
     display: inline-block;
 }
 
-input[type="submit"] {
+input[type="submit"], .button {
     background: #640e0a;
     padding: .65em 1em;
     margin: 1em .25em;
@@ -244,7 +244,7 @@ input[type="submit"] {
     transition: .3s;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, .button:hover {
     box-shadow: inset 0 15px 15px -10px rgba(0, 0, 0, 0.5), inset 0 -15px 15px -10px rgba(255, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
