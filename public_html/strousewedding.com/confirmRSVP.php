@@ -1,3 +1,4 @@
+
 <?php
 	include_once 'Database.php';
 	include_once 'header.php';
@@ -25,4 +26,9 @@
 </div>
 
 </body>
+<<<<<<< HEAD
 </HTML>
+=======
+</HTML>
+
+>>>>>>> 02143cd3f42af9d8c518c3c7d81c106b244d9c64
