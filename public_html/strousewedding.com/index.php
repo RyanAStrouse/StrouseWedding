@@ -1,11 +1,7 @@
 <?php 
-
 include 'Database.php';
-
 include_once('header.php');
-
 ?>
-
 		<div class="hero">
 			<div class="slideShow wrapper">
 				<div class="photoSlide"></div>
@@ -15,7 +11,6 @@ include_once('header.php');
 		<div class="content wrapper">
 
 			<h1>Welcome!</h1>
-			
 			<p>
 				This website is dedicated to the wedding of Ryan Strouse and Stephanie Durbin.  
 				Thank you for joining us for this once-in-a-lifetime occasion.  You will find out all the information regarding

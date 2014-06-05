@@ -17,7 +17,7 @@
 	$searchid = mysqli_real_escape_string($connect,$_GET['id']);
 	$table = "Guests";
 
-	$result = mysqli_query($connect,"SELECT `guest_id`, `firstName`, `middleName`, `lastName`, `streetAddress`, `city`, `state`, `zip`, `email`, `totalAttend`, `isAttend`, `ageOneToFour`,`ageFourToEleven`,`ageTwelveUp` FROM $table WHERE guest_id='$searchid'");
+	$result = mysqli_query($connect,"SELECT `guest_id`, `firstName`, `middleName`, `lastName`, `streetAddress`, `city`, `state`, `zip`, `email`, `totalAttend`, `isAttend`, `ageOneToFour`,`ageFiveToEleven`,`ageTwelveUp` FROM $table WHERE guest_id='$searchid'");
 
 	while ($row = mysqli_fetch_assoc($result))
 		{
@@ -149,9 +149,9 @@
 
 				<br />
 
-				<label for="ageFourToEleven" class="inline" style="width: 85px">4-11:</label>
-				<select name="ageFourToEleven" class="inline">
-					<option value="" selected="<?php echo $row['ageFourToEleven'];?>" disabled="true"><?php echo $row['ageFourToEleven'];?></option>
+				<label for="ageFiveToEleven" class="inline" style="width: 85px">4-11:</label>
+				<select name="ageFiveToEleven" class="inline">
+					<option value="" selected="<?php echo $row['ageFiveToEleven'];?>" disabled="true"><?php echo $row['ageFiveToEleven'];?></option>
 					<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
