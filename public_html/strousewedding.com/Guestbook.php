@@ -1,6 +1,17 @@
 <?php 
 	error_reporting(E_ALL);
 	include 'Database.php';
+
+	if (isset($_POST['Submit']))
+	{
+	$table2 = mysqli_real_escape_string($connect, "Comments");
+	$firstName = mysqli_real_escape_string($connect,$_POST['txtFname']);
+	$lastName = mysqli_real_escape_string($connect,$_POST['txtLname']);
+	$comments = mysqli_real_escape_string($connect,$_POST['txtComments']);
+
+	mysqli_query($connect, "INSERT INTO Comments (firstName, lastName, Comments) VALUES ('$firstName','$lastName','$comments')"); 
+	}
+
 	include_once('header.php');
 ?>
 
@@ -13,32 +24,33 @@
 		Feel free to leave a message in the guestbook!
 	</p>
 
-	<form action="post">
+	<div>
+	<form action="" method="post" name="Submit">
 		<div>
-		<label for="txtFName">First Name:
-		<input type="text" name="txtFName"></label>
+		<label for="txtFname">First Name:
+		<input type="text" name="txtFname" id="txtFname"></label>
 
-		<label for="txtLName">Last Name:
-		<input type="text" name="txtLName"></label>
+		<label for="txtLname">Last Name:
+		<input type="text" name="txtLname" id="txtLname"></label>
 		</div>
 
 		<div>
-		<label for="txtComment">Sign the guestbook:</label>
-		<textarea name="txtComments" cols="40" rows="5"></textarea>
+		<label for="txtComments">Sign the guestbook:</label>
+		<textarea name="txtComments" id="txtComments" cols="40" rows="5"></textarea>
 		</div>
 
-		<input class="button" type="submit" value="Submit">
+		<input class="button" type="submit" name="Submit" value="Submit">
 		<input class="button" type="submit" value="Go Back">
 		
  
 	</form>
-
+	</div>
 	<?php
 
 	$table = mysqli_real_escape_string($connect,"Guests");
 	$table2 = mysqli_real_escape_string($connect, "Comments");
 
-	$rows = mysqli_query($connect,"SELECT $table.`guest_id`, $table.`firstName`, $table.`lastName`, $table2.`stampDate`, $table2.`Comments` FROM $table, $table2 WHERE $table.`guest_id`= $table2.`guest_id`");
+	$rows = mysqli_query($connect,"SELECT `firstName`, `lastName`, `stampDate`, `Comments` FROM $table2");
 
 	//Put the results of query into an array
 	$result = array();

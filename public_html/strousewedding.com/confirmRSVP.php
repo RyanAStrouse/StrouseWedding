@@ -18,8 +18,8 @@
 	$totalAttend = mysqli_real_escape_string($connect,$_POST['totalAttend']);
 	$isAttend = mysqli_real_escape_string($connect,$_POST['radAttending']);
 	$ageOneToFour = mysqli_real_escape_string($connect,$_POST['ageOneToFour']);
-	$ageFourToEleven = mysqli_real_escape_string($connect,$_POST['ageFiveToEleven']);
-	$ageElevenUp = mysqli_real_escape_string($connect,$_POST['ageTwelveUp']);
+	$ageFiveToEleven = mysqli_real_escape_string($connect,$_POST['ageFiveToEleven']);
+	$ageTwelveUp = mysqli_real_escape_string($connect,$_POST['ageTwelveUp']);
 	$addGuest = mysqli_query($connect, "INSERT INTO $table (firstName, middleName, lastName, streetAddress, city, state, zip, email, totalAttend, isAttend, ageOneToFour, ageFiveToEleven, ageTwelveUp) VALUES('$firstName','$middleName','$lastName','$streetAddress','$city','$state','$zip','$email','$totalAttend','$isAttend','$ageOneToFour','$ageFiveToEleven','$ageTwelveUp')");
 	?>
 
