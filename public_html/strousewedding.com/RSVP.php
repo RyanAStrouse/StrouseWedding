@@ -10,7 +10,7 @@ include_once 'header.php';
 
 	<p>
 		On this page you will enter your first and last name, which will then check a database to pull up your information to verify details.
-		This will also allow you to RSVP to the wedding and reception, and even has a spot for the number of guests you are bringing and their general age.
+		This will also allow you to RSVP to the wedding and reception, and even has a spot for the number of guests you are bringing and their age.
 		The information collected will help us figure out how many people are planning to attend, and if they are in a particular age range.  The main goal
 		of all of this is to help us figure out how much it will cost for the reception, and to give the place an accurate count of the number of plates needed.
 	</p>

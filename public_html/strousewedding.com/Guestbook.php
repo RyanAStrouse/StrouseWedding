@@ -2,6 +2,13 @@
 	error_reporting(E_ALL);
 	include 'Database.php';
 
+	if ($_POST['action'] == 'submitGuestMessage') {
+		$values = $_POST['values'];
+		echo 'Success';
+
+		exit;
+	}
+	/*
 	if (isset($_POST['Submit']))
 	{
 	$table2 = mysqli_real_escape_string($connect, "Comments");
@@ -9,8 +16,9 @@
 	$lastName = mysqli_real_escape_string($connect,$_POST['txtLname']);
 	$comments = mysqli_real_escape_string($connect,$_POST['txtComments']);
 
-	mysqli_query($connect, "INSERT INTO Comments (firstName, lastName, Comments) VALUES ('$firstName','$lastName','$comments')"); 
+	mysqli_query($connect, "INSERT INTO $table2 (firstName, lastName, Comments) VALUES ('$firstName','$lastName','$comments')"); 
 	}
+	*/
 
 	include_once('header.php');
 ?>
@@ -25,7 +33,7 @@
 	</p>
 
 	<div>
-	<form action="" method="post" name="Submit">
+	<form action="" method="post" name="Submit" id="guestbookEntry">
 		<div>
 		<label for="txtFname">First Name:
 		<input type="text" name="txtFname" id="txtFname"></label>
@@ -40,9 +48,6 @@
 		</div>
 
 		<input class="button" type="submit" name="Submit" value="Submit">
-		<input class="button" type="submit" value="Go Back">
-		
- 
 	</form>
 	</div>
 	<?php
@@ -97,5 +102,14 @@
 			
 <!-- Close the whole container div -->
 </div>
-</body>
-</HTML>
+
+<div id="guestConfirm" class="popupContainer">
+    <div class="popupContent contentItem textCI">
+        <b class="closePopup"><a onclick="$('#guestConfirm').toggle();" title="Toggle Visibility">X</a></b>
+        <p>Your comment has been submitted.</p>
+    </div>
+</div>
+
+<?php 	
+	include_once('footer.php');
+?>
