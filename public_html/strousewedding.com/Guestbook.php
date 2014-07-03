@@ -1,11 +1,16 @@
 <?php 
-	error_reporting(E_ALL);
 	include 'Database.php';
 
 	if ($_POST['action'] == 'submitGuestMessage') {
 		$values = $_POST['values'];
-		echo 'Success';
+		$table2 = mysqli_real_escape_string($connect, "Comments");
+		$firstName = mysqli_real_escape_string($connect,$values[0][value]);
+		$lastName = mysqli_real_escape_string($connect,$values[1][value]);
+		$comments = mysqli_real_escape_string($connect,$values[2][value]);
 
+		mysqli_query($connect, "INSERT INTO $table2 (firstName, lastName, Comments) VALUES ('$firstName','$lastName','$comments')"); 
+
+		echo 'Success';
 		exit;
 	}
 	/*
@@ -33,18 +38,20 @@
 	</p>
 
 	<div>
-	<form action="" method="post" name="Submit" id="guestbookEntry">
-		<div>
-		<label for="txtFname">First Name:
-		<input type="text" name="txtFname" id="txtFname"></label>
-
-		<label for="txtLname">Last Name:
-		<input type="text" name="txtLname" id="txtLname"></label>
+	<form action="" method="post" name="Submit" id="guestbookEntry" class="clearfix">
+		<div style="width: 48%; margin: .5em 1%; float: left;">
+			<label for="txtFname">First Name:
+			<input type="text" name="txtFname" id="txtFname"></label>
 		</div>
 
-		<div>
-		<label for="txtComments">Sign the guestbook:</label>
-		<textarea name="txtComments" id="txtComments" cols="40" rows="5"></textarea>
+		<div style="width: 48%; margin: .5em 1%; float: left;">
+			<label for="txtLname">Last Name:
+			<input type="text" name="txtLname" id="txtLname"></label>
+		</div>
+
+		<div style="width: 98%; margin: 0 1%;">
+			<label for="txtComments">Sign the guestbook:</label>
+			<textarea name="txtComments" id="txtComments" rows="8"></textarea>
 		</div>
 
 		<input class="button" type="submit" name="Submit" value="Submit">
@@ -65,41 +72,27 @@
 	{
 		$result[] = $row;
 	}
+	?>
 
-	//Display and loop results from query
-	if (count($result) > 0) { 
-		foreach ($result as $key => $value)	{
-			$fName = $value['firstName'];
-			$lName = $value['lastName'];
-			$sDate = $value['stampDate'];
-			$comm = $value['Comments'];
-
+	<ul class="comments">
+		<?php
+		//Display and loop results from query
+		if (count($result) > 0) { 
+			foreach ($result as $key => $value)	{
+				$fName = $value['firstName'];
+				$lName = $value['lastName'];
+				$sDate = $value['stampDate'];
+				$comm = $value['Comments'];
+			?>
+				<li>
+					<h3><?php echo $fName;?> <?php echo $lName;?> <span class="timeStamp"><?php echo $sDate;?></span></h3>
+					<p><?php echo $comm;?></p>
+				</li>
+			<?php } 
+		}; 
 		?>
-				<div class="comments">
-					<table>
-					<tr>
-						<td>
-							<?php echo $fName;?>
-						</td>
+	</ul>
 
-						<td>
-							<?php echo $lName;?>
-						</td>
-
-						<td>
-							<?php echo $sDate;?>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="3">
-							<?php echo $comm;?>
-						</td>
-					</tr>
-				
-					</table>
-				</div>
-			<?php } }; ?>
-			
 <!-- Close the whole container div -->
 </div>
 

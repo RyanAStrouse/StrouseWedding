@@ -19,7 +19,7 @@
 		<link rel="stylesheet prefetch" type="text/css" href="http://fonts.googleapis.com/css?family=Allura">
 		<script src="js/prefixfree.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		
+
 		<!--[if lt IE 9]>
 			<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
 		<![endif]-->
@@ -85,4 +85,6 @@
 					<li><a href="Honeymoon.php">Honeymoon</a></li>
 				</ul>
 			</nav>
+
+			
 		</header>
