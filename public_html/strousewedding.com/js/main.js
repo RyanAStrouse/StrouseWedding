@@ -32,7 +32,29 @@ $('#addNewGuest').submit(function() {
 		success: function (data) {
 			if (data.indexOf('Success') > -1) {
 				console.log('test');
-				$('#addNewGuest').toggle();
+				$('#submitNewGuest').toggle();
+				setTimeout(function(){
+					location.reload();
+				}, 2000);
+			}
+		}
+	})
+
+	return false;
+});
+
+$('#guestConfirm').submit(function() {
+	$.ajax({
+		type: 'POST',
+		url: 'RSVP.php',
+		data: {
+			action: 'guestConfirmPop',
+			values: $('#guestConfirm').serializeArray()
+		},
+		success: function (data) {
+			if (data.indexOf('Success') > -1) {
+				console.log('test');
+				$('#guestConfirmPop').toggle();
 				setTimeout(function(){
 					location.reload();
 				}, 2000);
