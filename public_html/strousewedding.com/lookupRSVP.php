@@ -56,16 +56,16 @@
 				<input type="text" class="required" name="txtFname" id="txtFname" value="<?php echo $row['firstName'];?>" />
 
 				<label for="txtLname">Last Name:</label>
-				<input type="text" class="required" name="txtLname" value="<?php echo $row['lastName'];?>" />
+				<input type="text" class="required" name="txtLname" id="txtLname" value="<?php echo $row['lastName'];?>" />
 
 				<label for="txtStreetAddress">Street Address:</label>
-				<input type="text" class="required" name="txtStreetAddress" value="<?php echo $row['streetAddress'];?>" />
+				<input type="text" class="required" name="txtStreetAddress" id="txtStreetAddress" value="<?php echo $row['streetAddress'];?>" />
 
 				<label for="txtCity">City:</label>
-				<input type="text" class="required" name="txtCity" value="<?php echo $row['city'];?>" />
+				<input type="text" class="required" name="txtCity" id="txtCity" value="<?php echo $row['city'];?>" />
 
 				<label for="txtState">State:</label>
-				<select name="txtState">
+				<select name="txtState" id="txtState">
 	                <option value="AL" <?php if ($row['state'] == 'AL') { echo 'selected'; } ?>>AL</option>
 					<option value="AK" <?php if ($row['state'] == 'AK') { echo 'selected'; } ?>>AK</option>
 					<option value="AZ" <?php if ($row['state'] == 'AZ') { echo 'selected'; } ?>>AZ</option>
@@ -120,10 +120,10 @@
                 </select>
 
 				<label for="txtZip">Zip:</label>
-				<input type="text" class="required" name="txtZip" value="<?php echo $row['zip'];?>" />
+				<input type="text" class="required" name="txtZip" id="txtZip" value="<?php echo $row['zip'];?>" />
 
 				<label for="txtEmail">E-mail:</label>
-				<input type="text" class="required" name="txtEmail" value="<?php echo $row['email'];?>" />
+				<input type="text" class="required" name="txtEmail" id="txtEmail" value="<?php echo $row['email'];?>" />
 
 				<p><strong>Attending:</strong></p>
 
@@ -143,7 +143,7 @@
 				<p><strong>Age of Attendees:</strong></p>
 
 				<label for="ageOneToFour" class="inline" style="width: 85px">1-4:</label>
-				<select name="ageOneToFour" class="inline">
+				<select name="ageOneToFour" class="inline" id="ageOneToFour">
 					<option value="0" <?php if ($row['ageOneToFour'] == '0') { echo 'selected'; } ?>>0</option>
 					<option value="1" <?php if ($row['ageOneToFour'] == '1') { echo 'selected'; } ?>>1</option>
 					<option value="2" <?php if ($row['ageOneToFour'] == '2') { echo 'selected'; } ?>>2</option>
@@ -160,7 +160,7 @@
 				<br />
 
 				<label for="ageFiveToEleven" class="inline" style="width: 85px">4-11:</label>
-				<select name="ageFiveToEleven" class="inline">
+				<select name="ageFiveToEleven" class="inline" id="ageFiveToEleven">
 					<option value="0" <?php if ($row['ageFiveToEleven'] == '0') { echo 'selected'; } ?>>0</option>
 					<option value="1" <?php if ($row['ageFiveToEleven'] == '1') { echo 'selected'; } ?>>1</option>
 					<option value="2" <?php if ($row['ageFiveToEleven'] == '2') { echo 'selected'; } ?>>2</option>
@@ -177,7 +177,7 @@
 				<br />
 
 				<label for="ageTwelveUp" class="inline" style="width: 85px">12 and up:</label>
-				<select name="ageTwelveUp" class="inline">
+				<select name="ageTwelveUp" class="inline" id="ageTwelveUp">
 					<option value="0" <?php if ($row['ageTwelveUp'] == '0') { echo 'selected'; } ?>>0</option>
 					<option value="1" <?php if ($row['ageTwelveUp'] == '1') { echo 'selected'; } ?>>1</option>
 					<option value="2" <?php if ($row['ageTwelveUp'] == '2') { echo 'selected'; } ?>>2</option>

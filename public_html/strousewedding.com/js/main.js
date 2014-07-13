@@ -44,19 +44,20 @@ $('#addNewGuest').submit(function() {
 });
 
 $('#guestConfirm').submit(function() {
+	console.log('form submitted');
 	$.ajax({
 		type: 'POST',
-		url: 'RSVP.php',
+		url: 'lookupRSVP.php',
 		data: {
 			action: 'guestConfirmPop',
 			values: $('#guestConfirm').serializeArray()
 		},
 		success: function (data) {
 			if (data.indexOf('Success') > -1) {
-				console.log('test');
+				console.log(data);
 				$('#guestConfirmPop').toggle();
 				setTimeout(function(){
-					location.reload();
+					window.location = 'RSVP.php';
 				}, 2000);
 			}
 		}
