@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include 'Database.php';
 
 	if ($_POST['action'] == 'submitGuestMessage') {
@@ -81,11 +81,11 @@
 			foreach ($result as $key => $value)	{
 				$fName = $value['firstName'];
 				$lName = $value['lastName'];
-				$sDate = $value['stampDate'];
+				$sDate = strtotime($value['stampDate']);
 				$comm = $value['Comments'];
 			?>
 				<li>
-					<h3><?php echo $fName;?> <?php echo $lName;?> <span class="timeStamp"><?php echo $sDate;?></span></h3>
+					<h3><?php echo $fName;?> <?php echo $lName;?> <span class="timeStamp"><?php echo date('F jS, Y', $sDate); ?></span></h3>
 					<p><?php echo $comm;?></p>
 				</li>
 			<?php } 
