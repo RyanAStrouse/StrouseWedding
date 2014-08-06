@@ -35,5 +35,6 @@
 <!-- Close the whole container div -->
 </div>
 
-</body>
-</HTML>
+<?php 	
+	include_once('footer.php');
+?>

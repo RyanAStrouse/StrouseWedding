@@ -1,4 +1,9 @@
-$('#guestbookEntry').submit(function() {
+$('form').submit(function(e) {
+	checkRequired(this);
+});
+
+$('#guestbookEntry').submit(function() {	
+	checkRequired(this);
 	$.ajax({
 		type: 'POST',
 		url: 'Guestbook.php',
@@ -8,7 +13,6 @@ $('#guestbookEntry').submit(function() {
 		},
 		success: function (data) {
 			if (data.indexOf('Success') > -1) {
-				console.log('test');
 				$('#guestConfirm').toggle();
 				setTimeout(function(){
 					location.reload();
@@ -22,6 +26,7 @@ $('#guestbookEntry').submit(function() {
 
 
 $('#addNewGuest').submit(function() {
+	checkRequired(this);
 	$.ajax({
 		type: 'POST',
 		url: 'AdminRSVP.php',
@@ -31,7 +36,6 @@ $('#addNewGuest').submit(function() {
 		},
 		success: function (data) {
 			if (data.indexOf('Success') > -1) {
-				console.log('test');
 				$('#submitNewGuest').toggle();
 				setTimeout(function(){
 					location.reload();
@@ -44,7 +48,7 @@ $('#addNewGuest').submit(function() {
 });
 
 $('#guestConfirm').submit(function() {
-	console.log('form submitted');
+	checkRequired(this);
 	$.ajax({
 		type: 'POST',
 		url: 'lookupRSVP.php',
@@ -54,7 +58,6 @@ $('#guestConfirm').submit(function() {
 		},
 		success: function (data) {
 			if (data.indexOf('Success') > -1) {
-				console.log(data);
 				$('#guestConfirmPop').toggle();
 				setTimeout(function(){
 					window.location = 'RSVP.php';
@@ -78,6 +81,23 @@ function validate()
    }
   
    return( true );
+}
+
+function checkRequired(el) {
+	var missedFields = 0;
+	$(el).find('input').each(function() {
+		if ($(this).hasClass('required') && $(this).val().length == 0) {
+			$(this).before('<span class="requiredField">This field is required</span>');
+			missedFields++;
+		}
+	});
+	
+	if (missedFields > 0) {
+		e.preventDefault();
+		return false;
+	} else {
+		return true;
+	}
 }
 
 

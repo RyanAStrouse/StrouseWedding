@@ -19,6 +19,9 @@
 		<link rel="stylesheet prefetch" type="text/css" href="http://fonts.googleapis.com/css?family=Allura">
 		<script src="js/prefixfree.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Initilize GoogleMaps API with direction search -->		
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRgAVlGoi4cJdK__in0-jvws5uvBhYSv4"></script>
+
 
 		<!--[if lt IE 9]>
 			<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
@@ -30,7 +33,8 @@
 		       filter: none;
 		    }
 		  </style>
-		<![endif]-->
+		<![endif]-->		
+
 	</head>
 	<body>
 		<!--[if lt IE 7]>
@@ -40,7 +44,7 @@
 		<header class="siteHeader">
 			<div class="branding">
 				<div class="wrapper clearfix">
-					<img class="logo" src="images/logo.png" />
+					<img class="logo" src="images/newLogo.png" />
 					<span id="countdown"></span>
 					<script>
 					// Set the target date

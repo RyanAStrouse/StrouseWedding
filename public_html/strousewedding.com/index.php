@@ -4,13 +4,14 @@ include_once('header.php');
 ?>
 		<div class="hero">
 			<div class="slideShow wrapper">
-				<div class="photoSlide"></div>
+				<img src="images/ringClose.jpg" alt="Ryan and Stephanie" />
 			</div>
 		</div>
 
-		<div class="content wrapper">
+		<div class="content wrapper clearfix">
 
 			<h1>Welcome!</h1>
+			<img src="images/happyCouple.jpg" alt="Ryan and Stephanie" class="framed" />
 			<p>
 				This website is dedicated to the wedding of Ryan Strouse and Stephanie Durbin.  
 				Thank you for joining us for this once-in-a-lifetime occasion.  You will find out all the information regarding
@@ -19,9 +20,8 @@ include_once('header.php');
 			</p>
 		</div>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 		<script>
+		/*
 			var images = new Array();
 			function preload() {
 				for (i = 0; i < preload.arguments.length; i++) {
@@ -52,6 +52,7 @@ include_once('header.php');
 			$(document).ready(function () {
 				swapImg();
 			});
+*/
 		</script>
 
 <?php include_once('footer.php'); ?>

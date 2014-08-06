@@ -196,7 +196,7 @@
 				<input type="hidden" name="guest_id" value="<?php echo $searchid; ?>" />
 
 				<input class="button" type="Submit" value="Confirm">	
-				<button class="button"><a href="RSVP.php">Go Back</a></button>
+				<button class="button" onclick="history.go(-1);">Go Back</button>
 				
 			</form>
 		<?php } ?>
