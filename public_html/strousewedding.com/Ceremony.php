@@ -21,9 +21,9 @@ function initialize() {
 	directionsDisplay.setMap(map);
 	directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
-	var control = document.getElementById('control');
-	control.style.display = 'block';
-	map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+	// var control = document.getElementById('control');
+	// control.style.display = 'block';
+	// map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 }
 
 function calcRoute() {
@@ -60,24 +60,25 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	The wedding ceremony will take place at "Our Lady of the Greenwood church" in Greenwood, IN.
 	</p>
 
-	<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDRgAVlGoi4cJdK__in0-jvws5uvBhYSv4&q=Our+Lady+Of+The+Greenwood,Greenwood+Indiana"></iframe>
+	<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDRgAVlGoi4cJdK__in0-jvws5uvBhYSv4&q=Our+Lady+Of+The+Greenwood,Greenwood+Indiana"></iframe>
 
 	<p>
 	The reception will take place afterwards at "Jonathon Byrd's Cafeteria" down a couple blocks from the church.
 	</p>
-	<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=Our%20Lady%20of%20the%20Greenwood%20church%2C%20South%20Meridian%20Street%2C%20Greenwood%2C%20IN%2C%20United%20States&destination=Jonathan%20Byrd's%2C%20Byrd%20Way%2C%20Greenwood%2C%20IN%2C%20United%20States&key=AIzaSyDRgAVlGoi4cJdK__in0-jvws5uvBhYSv4"></iframe>
+
+	<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/directions?origin=Our+Lady+of+the+Greenwood,+335+S+Meridian+St,+Greenwood,+IN+46143&destination=Jonathan+Byrd's,+100+Byrd+Way,+Greenwood,+IN+46143&key=AIzaSyDRgAVlGoi4cJdK__in0-jvws5uvBhYSv4"></iframe>
 
 	
-	<div>
+	<div class="directions clearfix">
 		<p>Start:<input id="start" type="textbox" value="Evansville, IN"></p>
 
 		<p>End:<input id="end" type="textbox" value="Our Lady of the Greenwood Church, Greenwood, IN"></p>
 	
-		<input type="button" value="Directions" onclick="calcRoute();">
-	</div>
+		<p style="width: 100%; margin: 0 1%;"><input type="button" value="Directions" class="button" style="width: 200px;" onclick="calcRoute();"></p>
 
-	<div id="directions-panel"></div>
-	<div id="map-canvas" style="width: 600px; height: 450px;"></div>
+		<div id="directions-panel"></div>
+		<div id="map-canvas" style="width: 600px; height: 450px;"></div>
+	</div>
 
 <!-- Close the whole container div -->
 </div>

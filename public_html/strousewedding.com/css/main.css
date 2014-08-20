@@ -248,7 +248,7 @@ body {
 
 /* Forms */
 
-form, section {
+form, section, iframe, #map-canvas, #directions-panel {
     background: #d0ba96;
     width: 75%;
     padding: 1em;
@@ -358,7 +358,7 @@ section {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.partyMember img, img.framed {
+.partyMember img, .welcome img.framed {
     float: left;
     max-width: 200px;
     margin-right: 1em;
@@ -366,8 +366,46 @@ section {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
 }
 
+img.framed {
+    display: block;
+    max-width: 98%;
+    margin: auto;
+    border: 2px solid #f8e9d0;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+}
+
 .partyMember h2 {
     margin-top: 0;
+}
+
+/* Ceremony */
+
+iframe {
+    display: block;
+}
+
+.directions > p {
+    float: left;
+    width: 48%;
+    margin: 1em 1%;
+}
+
+.directions p input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+}
+
+#map-canvas {
+    width: 64%;
+    margin: 1em 1%;
+    float: left;
+}
+
+#directions-panel {
+    width: 31%;
+    margin: 1em 1%;
+    float: right;
 }
 
 /* =============================================================================
